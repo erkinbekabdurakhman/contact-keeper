@@ -1,8 +1,14 @@
 const express = require('express');
 const router = require('./routes/users');
+const connectDB = require('./config/config');
 
 const app = express();
+// connect DB
+connectDB();
 
+
+//init Middleware
+app.use(express.json({ extended: false }));
 app.get('/', (req, res) => res.send({ msg: "contact keeper" }));
 
 const PORT = process.env.PORT || 5000;
