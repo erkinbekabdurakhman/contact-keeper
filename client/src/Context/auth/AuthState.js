@@ -39,7 +39,7 @@ const AuthState = (props) => {
                 payload: res.data 
             })
         } catch (err) {
-            dispatch({ AUTH_ERROR })
+            dispatch({ type: AUTH_ERROR })
         }
     }
     // Register User
